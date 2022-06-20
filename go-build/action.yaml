@@ -28,8 +28,7 @@ runs:
       BINARY_NAME: ${{ inputs.binary_name }}
     shell: bash
     working-directory: ${{ inputs.working_directory }}
-    run: >
+    run: >-
       go build -ldflags "-s -w"
-      -ldflags "-X github.com/${GITHUB_REPOSITORY}/version.GitCommit=${SHORT_SHA} \
-        -X github.com/exsules/pkg/logging.GitCommitID=${SHORT_SHA}"
+      -ldflags "-X github.com/${GITHUB_REPOSITORY}/version.GitCommit=${SHORT_SHA} -X github.com/exsules/pkg/logging.GitCommitID=${SHORT_SHA}"
       -o ${BINARY_NAME}
