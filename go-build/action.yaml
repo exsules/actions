@@ -16,9 +16,11 @@ runs:
   steps:
   - name: Set repo_path
     id: repo_path
+    shell: bash
     run: echo "::set-output name=repo_path::github.com/$GITHUB_REPOSITORY"
   - name: Get current ref
     id: current_ref
+    shell: bash
     run: echo "::set-output name=current_ref::$(git rev-parse --short HEAD)"
   - name: Run Go Build
     env:
