@@ -11,11 +11,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Run Go Mod Tidy
-      shell: bash
-      working-directory: ${{ inputs.working_directory }}
-      run: go mod tidy
-    - name: Verify Go Mod Tidy
-      uses: chainguard-dev/actions/nodiff@main
-      with:
-        fixup-command: go mod tidy
+  - name: Run Go Mod Tidy
+    shell: bash
+    working-directory: ${{ inputs.working_directory }}
+    run: go mod tidy
+  - name: Verify Go Mod Tidy
+    uses: chainguard-dev/actions/nodiff@main
+    with:
+      fixup-command: go mod tidy

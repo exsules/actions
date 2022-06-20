@@ -1,0 +1,20 @@
+---
+name: Go - Lint
+description: Runs golangci-lint over the working tree.
+inputs:
+  working_directory:
+    default: .
+    required: false
+runs:
+  using: composite
+  steps:
+  - id: golangci_configuration
+    uses: andstor/file-existence-action@v1
+    with:
+      files: .golangci.yaml
+  - uses: golangci/golangci-lint-action@v3
+    if: steps.golangci_configuration.outputs.files_exists == 'true'
+    with:
+      version: v1.46
+      skip-pkg-cache: true
+      skip-build-cache: false
