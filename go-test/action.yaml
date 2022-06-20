@@ -1,0 +1,22 @@
+---
+name: Go - Test
+inputs:
+  working_directory:
+    default: .
+    required: false
+  tags:
+    default: ""
+    required: false
+  race:
+    default: true
+    required: false
+  timeout:
+    default: 20m
+    required: false
+runs:
+  using: composite
+  steps:
+  - name: Go Test
+    shell: bash
+    working-directory: ${{ inputs.working_directory }}
+    run: go test --race=${{ inputs.race }} --failfast --tags '${{ inputs.tags }}' -timeout '${{ inputs.timeout }}' ./...
