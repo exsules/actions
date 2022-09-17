@@ -11,6 +11,9 @@ inputs:
   binary_name:
     description: The name of the binary to build.
     required: true
+  cgo_enabled:
+    default: 0
+    required: false
 runs:
   using: composite
   steps:
@@ -26,6 +29,7 @@ runs:
     env:
       SHORT_SHA: ${{ steps.current_ref.outputs.current_ref }}
       BINARY_NAME: ${{ inputs.binary_name }}
+      CGO_ENABLED: ${{ inputs.cgo_enabled }}
     shell: bash
     working-directory: ${{ inputs.working_directory }}
     run: >-
