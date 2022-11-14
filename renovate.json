@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":disableDependencyDashboard",
+    ":disableRateLimiting"
+  ],
+  "labels": ["dependencies"],
+  "assigneesFromCodeOwners": true,
+  "reviewers": ["blazed"],
+  "automerge": false,
+  "packageRules": [
+    {
+      "updateTypes": ["major", "minor", "patch", "pin", "digest"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["github-actions"],
+      "commitMessagePrefix": "actions:",
+      "automerge": true
+    }
+  ]
+}
