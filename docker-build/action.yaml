@@ -19,7 +19,7 @@ inputs:
 runs:
   using: composite
   steps:
-  - uses: docker/setup-qemu-action@v1
+  - uses: docker/setup-qemu-action@v2
     if: inputs.qemu == 'true'
   - uses: docker/setup-buildx-action@v2
   - uses: docker/metadata-action@v4
