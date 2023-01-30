@@ -28,7 +28,7 @@ runs:
       images: ${{ inputs.images }}
       tags: |
         type=sha,enable=true,prefix=,format=short
-  - uses: docker/build-push-action@v3
+  - uses: docker/build-push-action@v4
     with:
       context: ${{ inputs.context }}
       file: ${{ inputs.file }}
