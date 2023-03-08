@@ -15,6 +15,6 @@ runs:
   - uses: golangci/golangci-lint-action@v3
     if: steps.golangci_configuration.outputs.files_exists == 'true'
     with:
-      version: v1.50
+      version: v1.51.2
       skip-pkg-cache: true
       skip-build-cache: false
