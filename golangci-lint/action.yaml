@@ -9,7 +9,7 @@ runs:
   using: composite
   steps:
   - id: golangci_configuration
-    uses: andstor/file-existence-action@v2
+    uses: andstor/file-existence-action@v3
     with:
       files: .golangci.yaml
   - uses: golangci/golangci-lint-action@v3
