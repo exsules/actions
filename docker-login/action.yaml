@@ -13,6 +13,6 @@ runs:
   steps:
   - uses: docker/login-action@v3
     with:
-      registry: registry.exsules.dev
+      registry: registry.gitlab.com
       username: ${{ inputs.username }}
       password: ${{ inputs.password }}
