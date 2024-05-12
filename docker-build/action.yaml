@@ -27,6 +27,7 @@ runs:
     with:
       images: ${{ inputs.images }}
       tags: |
+        type=semver,pattern={{version}}
         type=sha,enable=true,prefix=,format=short
   - uses: docker/build-push-action@v5
     with:
