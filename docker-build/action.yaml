@@ -29,7 +29,7 @@ runs:
       tags: |
         type=semver,pattern={{version}}
         type=sha,enable=true,prefix=,format=short
-  - uses: docker/build-push-action@v5
+  - uses: docker/build-push-action@v6
     with:
       context: ${{ inputs.context }}
       file: ${{ inputs.file }}
