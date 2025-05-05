@@ -12,7 +12,7 @@ runs:
     uses: andstor/file-existence-action@v3
     with:
       files: .golangci.yaml
-  - uses: golangci/golangci-lint-action@v7
+  - uses: golangci/golangci-lint-action@v8
     if: steps.golangci_configuration.outputs.files_exists == 'true'
     with:
       version: v1.63.4
