@@ -20,7 +20,7 @@ runs:
   using: composite
   steps:
   - uses: imranismail/setup-kustomize@v2
-  - uses: docker/metadata-action@v5
+  - uses: docker/metadata-action@v6
     id: meta
     with:
       images: ${{ inputs.images }}
